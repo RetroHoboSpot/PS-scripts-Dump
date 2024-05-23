@@ -5,6 +5,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 $packages = @(
     "VLC",
     "adobereader",
+    "winrar",
+    "microsoft-teams.install",
+    "microsoft-edge"  #last Item
     # Add more package names here
 )
 
