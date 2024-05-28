@@ -44,4 +44,18 @@ foreach ($package in $packages) {
     }
 }
 
+# Function to upgrade all installed Chocolatey applications
+function Upgrade-AllChocoApps {
+    Write-Output "Upgrading all Chocolatey applications..."
+    choco upgrade all -y
+    if ($?) {
+        Write-Output "All applications upgraded successfully."
+    } else {
+        Write-Output "Failed to upgrade some applications."
+    }
+}
+
+# Upgrade all
+Upgrade-AllChocoApps
+
 Write-Output "Holy Cow it worked!."
