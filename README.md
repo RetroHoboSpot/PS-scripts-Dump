@@ -13,7 +13,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https:/
 ```
 
 
-# Choco Auto Insall junk 
+# Choco Auto Install junk 
 
 ```bash
 Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https://raw.githubusercontent.com/RetroHoboSpot/PS-scripts-Dump/main/Choco.ps1 -OutFile .\Choco.ps1; .\choco.ps1
