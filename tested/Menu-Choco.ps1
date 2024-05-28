@@ -1,4 +1,4 @@
-# Define the function to install Chocolatey
+# install Chocolatey
 function Install-Chocolatey {
     Set-ExecutionPolicy Bypass -Scope Process -Force;
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
@@ -6,7 +6,7 @@ function Install-Chocolatey {
     Write-Output "Chocolatey installed successfully."
 }
 
-# Define the function to install specific Chocolatey applications
+# install specific Chocolatey applications
 function Install-ChocoApps {
     param (
         [string[]]$apps
@@ -21,7 +21,7 @@ function Install-ChocoApps {
     }
 }
 
-# Define the function to upgrade all installed Chocolatey applications
+# upgrade all installed Chocolatey applications
 function Upgrade-AllChocoApps {
     choco upgrade all -y
     if ($?) {
