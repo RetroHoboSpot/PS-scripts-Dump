@@ -4,13 +4,18 @@ function Ensure-RunAsAdmin {
         Write-Output "Restarting script with administrative privileges..."
         Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
         Exit
-#installs choco and the below apps 
+    }
+}
 
-Set-ExecutionPolicy Bypass -Scope Process -Force;
-    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
-    iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
-    Write-Output "Chocolatey installed successfully."
-    
+# Ensure script runs with administrative privileges
+Ensure-RunAsAdmin
+
+# Install Chocolatey and set security protocol
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Write-Output "Chocolatey installed successfully."
+
 # Install packages using Chocolatey
 $packages = @(
     "VLC",
