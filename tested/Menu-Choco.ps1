@@ -34,7 +34,7 @@ function Upgrade-AllChocoApps {
 # Main menu
 function Main-Menu {
     Clear-Host
-    Write-Output "Chocolatey Management Script"
+    Write-Output "Spot's Chocolatey Management Script"
     Write-Output "1. Install Chocolatey"
     Write-Output "2. Install Chocolatey Applications"
     Write-Output "3. Upgrade All Installed Applications"
