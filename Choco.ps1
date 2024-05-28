@@ -7,7 +7,7 @@ function Ensure-RunAsAdmin {
     }
 }
 
-# Ensure script runs with administrative privileges
+# Ensure the script is running as admin
 Ensure-RunAsAdmin
 
 # Install Chocolatey and set security protocol
