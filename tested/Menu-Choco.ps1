@@ -6,7 +6,7 @@ function Install-Chocolatey {
     Write-Output "Chocolatey installed successfully."
 }
 
-# install specific Chocolatey applications
+# nstall specific Chocolatey applications
 function Install-ChocoApps {
     param (
         [string[]]$apps
@@ -34,20 +34,20 @@ function Upgrade-AllChocoApps {
 # Main menu
 function Main-Menu {
     Clear-Host
-    Write-Output "Spot's Chocolatey Management Script"
+    Write-Output "Spot's Lazy Chocolatey Management Script"
     Write-Output "1. Install Chocolatey"
     Write-Output "2. Install Chocolatey Applications"
     Write-Output "3. Upgrade All Installed Applications"
     Write-Output "4. Exit"
     
-    $choice = Read-Host "Please select an option (1-4)"
+    $choice = Read-Host "select an option (1-4)"
 
     switch ($choice) {
         1 {
             Install-Chocolatey
         }
         2 {
-            $apps = Read-Host "Enter the applications to install (comma separated)"
+            $apps = Read-Host "Enter the applications to install (comma separated) (e.g., git, vscode, googlechrome)"
             $appList = $apps -split ","
             Install-ChocoApps -apps $appList
         }
@@ -60,10 +60,14 @@ function Main-Menu {
         }
         default {
             Write-Output "Invalid selection. Please try again."
-            Main-Menu
         }
     }
+
+    # Pause then menu again
+    Write-Output "Press any key to return to the main menu..."
+    [void][System.Console]::ReadKey($true)
+    Main-Menu
 }
 
-# Run the main menu
+# Run DMC the main menu
 Main-Menu
