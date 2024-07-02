@@ -23,5 +23,5 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https:/
 # remove outlook teams junk 
 
 ```bash
-Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https://raw.githubusercontent.com/RetroHoboSpot/PS-scripts-Dump/main/workingon/remove%20outlook%20teams.ps1 -outfile .\yeet.ps1: .\yeet.ps1
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https://raw.githubusercontent.com/RetroHoboSpot/PS-scripts-Dump/main/workingon/yeet.ps1 -outfile .\yeet.ps1: .\yeet.ps1
 ```
