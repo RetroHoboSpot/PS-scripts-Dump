@@ -1,32 +1,14 @@
-
-# Function to check and elevate to Administrator if needed
-function Check-Admin {
-    param(
-        [switch]$Quiet
-    )
-
-    $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
-
-    if (-not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-        if (-not $Quiet) {
-            Write-Warning "You do not have Administrator rights. Attempting to elevate..."
-        }
-
-        # Create new process that runs PowerShell as Administrator
-        $newProcess = New-Object System.Diagnostics.ProcessStartInfo "PowerShell"
-        $newProcess.Arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`""
-        $newProcess.Verb = "RunAs"
-
-        # Start the new process
-        [System.Diagnostics.Process]::Start($newProcess)
-
-        # Exit the current script
+# Function to check if the script is running as admin and relaunch if not
+function Ensure-RunAsAdmin {
+    if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+        Write-Output "Restarting script with administrative privileges..."
+        Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
         Exit
     }
 }
 
-# Call the function to check and elevate to Administrator if needed
-Check-Admin -Quiet
+# Ensure the script is running as admin
+Ensure-RunAsAdmin
 
 # Uninstall Outlook for Windows app package for all users
 try {
