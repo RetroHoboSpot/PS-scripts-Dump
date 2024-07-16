@@ -25,3 +25,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https:/
 ```bash
 Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https://raw.githubusercontent.com/RetroHoboSpot/PS-scripts-Dump/main/workingon/yeet.ps1 -outfile .\yeet.ps1; .\yeet.ps1
 ```
+
+# install vivi
+
+```bash
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https://raw.githubusercontent.com/RetroHoboSpot/PS-scripts-Dump/main/tested/installvivi.sp1 -outfile .\installvivi.sp1; .\installvivi.sp1
+```
