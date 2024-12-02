@@ -34,5 +34,5 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https:/
 # Remove windows feed and crap
 
 ```bash
-Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https://raw.githubusercontent.com/RetroHoboSpot/PS-scripts-Dump/refs/heads/main/workingon/nukefeed.ps1 -oufile .\nukefeed.ps1; .\nukefeed.ps1
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest -Uri https://raw.githubusercontent.com/RetroHoboSpot/PS-scripts-Dump/refs/heads/main/workingon/nukefeed.ps1 -outfile .\nukefeed.ps1; .\nukefeed.ps1
 ```
