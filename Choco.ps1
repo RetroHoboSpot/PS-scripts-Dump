@@ -31,8 +31,10 @@ $packages = @(
     "adobereader",
     "winrar",
     "vscode",
-   #"microsoft-teams.install",
-    "microsoft-edge"
+    "microsoft-teams.install",
+    "microsoft-edge",
+    "drawio"
+    "powerbi"
     # Add more package names here
 )
 
